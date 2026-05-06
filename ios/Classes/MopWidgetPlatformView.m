@@ -39,7 +39,7 @@
                 [self openWidgetWithQR:p[@"qrCode"] forceUpdate: p[@"forceUpdate"] != NULL];
             } else {
                 
-                NSLog(@"fincli 打开小组件报错：%@", error);
+                NSLog(@"fincli 打开小组件报错：缺少 appId 或 qrCode");
                 MopEventStream *eventStream = [[MopPlugin instance] mopEventStreamHandler];
                 NSDictionary *eventData = @{
                     @"viewId": @(self->_viewId),
@@ -85,7 +85,7 @@
                 
             }
         }else {
-            NSLog(@"fincli 打开小组件报错：%@", error);
+            NSLog(@"fincli 打开小组件报错：缺少 appId 或 qrCode");
             MopEventStream *eventStream = [[MopPlugin instance] mopEventStreamHandler];
             NSDictionary *eventData = @{
                 @"viewId": @(self->_viewId),
